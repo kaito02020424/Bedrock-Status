@@ -1,0 +1,8 @@
+{
+    "host":"server address",
+    "port":19132,
+    "prefix":"s!",
+    "roleId":"role id",
+    "intervalSec":"interval seconds",
+    "token":"your bot token here"
+}

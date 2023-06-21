@@ -1,0 +1,15 @@
+{
+  "name": "bedrock-status",
+  "version": "1.0.0",
+  "description": "Bedrock Server status to Discord",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kaito02020424 <kaito02020424@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bedrock-protocol": "^3.28.1",
+    "discord.js": "^14.11.0"
+  }
+}
