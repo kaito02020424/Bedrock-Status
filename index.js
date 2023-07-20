@@ -17,6 +17,9 @@ client.on("messageCreate", (message) => {
         }
     }
 })
+client.on("error",(err) => {
+    console.log("[Bedrock-Status]: ",err)
+}) 
 function date() {
     return new Date()
 }
