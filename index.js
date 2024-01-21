@@ -5,16 +5,14 @@ const client = new discord.Client({ intents: [discord.GatewayIntentBits.Guilds, 
 let messageId;
 client.on("messageCreate", (message) => {
     if (message.author.bot) return;
-    if (message.content.startsWith(config.prefix)) {
-        if (message.content.startsWith(config.prefix + "status")) {
-            if (!message.member.roles.cache.has(config.roleId)) return;
-            const l = message.content.split(" ");
-            if (l.length === 1) {
-                new Status(config.host, config.port, message)
-                return;
-            }
-            new Status(l[1], Number(l[2]), message);
+    if (message.content.startsWith(config.prefix + "status")) {
+        if (!message.member.roles.cache.has(config.roleId)) return;
+        const l = message.content.split(" ");
+        if (l.length === 1) {
+            new Status(config.host, config.port, message)
+            return;
         }
+        new Status(l[1], Number(l[2]), message);
     }
 })
 client.on("error", (err) => {
