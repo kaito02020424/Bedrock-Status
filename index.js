@@ -6,25 +6,25 @@ let messageId;
 client.on("messageCreate", (message) => {
     if (message.author.bot) return;
     if (message.content.startsWith(config.prefix)) {
-        if (message.content.startsWith(config.prefix + "status")){
+        if (message.content.startsWith(config.prefix + "status")) {
             if (!message.member.roles.cache.has(config.roleId)) return;
             const l = message.content.split(" ");
             if (l.length === 1) {
-                new Status(config.host,config.port,message)
+                new Status(config.host, config.port, message)
                 return;
             }
-            new Status(l[1],Number(l[2]),message);
+            new Status(l[1], Number(l[2]), message);
         }
     }
 })
-client.on("error",(err) => {
-    console.log("[Bedrock-Status]: ",err)
-}) 
+client.on("error", (err) => {
+    console.log("[Bedrock-Status]: ", err)
+})
 function date() {
     return new Date()
 }
 class Status {
-    constructor(address, port,message) {
+    constructor(address, port, message) {
         this.address = address;
         this.port = port;
         bedrock.ping({ host: this.address, port: this.port })
