@@ -73,4 +73,4 @@ class Status {
             })
     }
 }
-client.login(config.token);
+client.login(config.token).catch(console.log);
