@@ -1,8 +1,13 @@
 {
-    "host":"server address",
-    "port":19132,
-    "prefix":"s!",
-    "roleId":"role id",
-    "intervalSec":"interval seconds",
-    "token":"your bot token here"
+    "hosts": [
+        {
+            "hostName": "main",
+            "address": "address",
+            "port": 19132
+        }
+    ],
+    "prefix": "s!",
+    "roleId": "role id",
+    "intervalSec": 15,
+    "token": "token"
 }
