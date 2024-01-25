@@ -119,7 +119,7 @@ class Status {
  * 
  * @param {host} host 
  * @param {discord.EmbedBuilder} embed 
- * @returns {Promise<boolean}
+ * @returns {Promise<boolean>}
  */
 function setField(host, embed) {
     return new Promise((r) => {
