@@ -47,13 +47,16 @@ class Status {
         this.hosts = hosts
         const embed = new discord.EmbedBuilder
         embed.setAuthor({ "name": "Bedrock Status" });
+        /**
+         * @type {Promise<boolean>[]}
+         */
         const pingAwait = []
         for (const host of hosts) {
             pingAwait.push(setField(host, embed))
         }
         Promise
             .all(pingAwait)
-            .then((/**@type {any[]}*/v) => {
+            .then((/**@type {boolean[]}*/v) => {
                 if (!v.includes(true)) {
                     embed
                         .setColor(0xff0000)
@@ -78,6 +81,10 @@ class Status {
                     this.messageId = value
                 });
                 this.timer = setInterval(() => {
+                    /**
+                     * @type {Promise<boolean>[]}
+                     */
+                    const pingAwait = []
                     const embed = new discord.EmbedBuilder
                     embed.setAuthor({ "name": "Bedrock Status" });
                     for (const host of hosts) {
@@ -112,6 +119,7 @@ class Status {
  * 
  * @param {host} host 
  * @param {discord.EmbedBuilder} embed 
+ * @returns {Promise<boolean}
  */
 function setField(host, embed) {
     return new Promise((r) => {
