@@ -125,7 +125,7 @@ function setField(host, embed) {
     return new Promise((r) => {
         bedrock.ping({ host: host.address, port: host.port })
             .then((value) => {
-                embed.addFields({ name: host.hostName, value: `Status: Online\nServer Name: ${value.motd}\nWorld Name: ${value.levelName}\nVersion: ${value.version}\nPlayers: ${value.playersOnline} /${value.playersMax}`, inline: true })
+                embed.addFields({ name: host.hostName, value: `Status: Online\nServer Name: ${value.motd}\nWorld Name: ${value.levelName}\nVersion: ${value.version}\nPlayers: ${value.playersOnline}/${value.playersMax}`, inline: true })
                 r(true)
             })
             .catch(() => {
